@@ -10,7 +10,7 @@
  * Sensores:   3 x HC-SR04 (frente, esquerda, direita) e 1 x MPU-6050
  * Bibliotecas: AFMotor_R4 (ou AFMotor), MPU6050 e Wire
  *
- * Pasta e arquivo precisam ter o mesmo nome: AspiradorAutonomo/
+ * 
  */
 
 #include <Wire.h>
@@ -43,8 +43,7 @@ const uint8_t       NIVEL_DE_QUEDA         = HIGH;   // leitura que significa "s
 const bool          SUCCAO_ATIVA           = false;
 const uint8_t       PINO_SUCCAO            = 22;
 
-// Nota: no robô original os motores M1 e M2 ficam no lado direito.
-// Se o seu robô girar ao contrário do esperado, troque M1_M2_NO_LADO_DIREITO.
+
 
 // =====================================================================
 //  PINOS DOS SENSORES ULTRASSÔNICOS  [0 = frente, 1 = esquerda, 2 = direita]
@@ -280,7 +279,7 @@ void setup() {
     }
   }
 
-  delay(2500);          // tempo para colocar o robô no chão, parado
+  delay(2500);          // tempo para colocar o robô no chão, parado, NÃO ESQUECER
   calibrarGiro();       // o robô precisa estar imóvel aqui
   randomSeed(analogRead(A15) ^ micros());
   instanteAnteriorUs = micros();
